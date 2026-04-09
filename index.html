@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        main {
+            padding: 40px 30px;
+        }
+        
+        section {
+            margin-bottom: 50px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f5f5f5;
+        }
+        
+        .profile-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-title {
+            color: #4a6491;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .project-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .project-link {
+            color: #4a6491;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+            transition: color 0.3s;
+        }
+        
+        .project-link:hover {
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 10px;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-pic">JS</div>
+            <h1>John Smith</h1>
+            <p class="subtitle">Software Engineer | Full Stack Developer | Tech Enthusiast</p>
+            <div class="social-links">
+                <a href="#" title="GitHub">GitHub</a>
+                <a href="#" title="LinkedIn">LinkedIn</a>
+                <a href="#" title="Twitter">Twitter</a>
+                <a href="#" title="Portfolio">Portfolio</a>
+            </div>
+        </header>
+        
+        <main>
+            <section class="profile">
+                <h2>About Me</h2>
+                <div class="profile-content">
+                    <p>I'm a passionate software engineer with over 5 years of experience building scalable web applications and innovative software solutions. I specialize in full-stack development, with expertise in modern JavaScript frameworks, cloud technologies, and agile development methodologies.</p>
+                    <p>My journey in software development began with a curiosity about how things work, which evolved into a career creating impactful digital experiences. I enjoy solving complex problems, optimizing performance, and crafting clean, maintainable code.</p>
+                    <p>When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+                </div>
+            </section>
+            
+            <section class="projects">
+                <h2>Software Showcase</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">
+                            <span>🚀</span> Project Alpha
+                        </div>
+                        <div class="project-description">
+                            A full-stack task management application with real-time collaboration features, built with React and Node.js. Includes file sharing, notifications, and team management.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">WebSocket</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-title">
+                            <span>📊</span> DataViz Dashboard
+                        </div>
+                        <div class="project-description">
+                            Interactive data visualization dashboard for business intelligence. Connects to multiple data sources and provides customizable charts and reports.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-title">
+                            <span>🛒</span> E-Commerce Platform
+                        </div>
+                        <div class="project-description">
+                            Scalable online marketplace with payment integration, inventory management, and order tracking system.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Made with <span style="color: #e25555;">❤️</span> by John Smith | &copy; 2026</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Based in San Francisco, CA</p>
+        </footer>
+    </div>
+</body>
+</html>
