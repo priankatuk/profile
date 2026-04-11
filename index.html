@@ -1,145 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software Developer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
             --primary-light: #818cf8;
-            --secondary: #0ea5e9;
-            --dark: #1e293b;
-            --dark-secondary: #334155;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --gray-light: #e2e8f0;
-            --white: #ffffff;
             --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            --shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.3);
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.4);
         }
         
         body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: var(--dark-secondary);
-            background: linear-gradient(135deg, #f0f4ff 0%, #fef8ff 50%, #f0f9ff 100%);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0f172a 100%);
             min-height: 100vh;
+            color: #e2e8f0;
         }
         
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 24px;
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
         }
         
-        header {
-            display: flex;
-            align-items: center;
-            gap: 48px;
-            margin-bottom: 60px;
-            padding: 48px;
-            background: var(--white);
-            border-radius: 24px;
+        .card:hover {
+            transform: translateY(-8px);
             box-shadow: var(--shadow);
+            border-color: var(--primary-light);
+        }
+        
+        header .card {
             position: relative;
             overflow: hidden;
         }
         
-        header::before {
+        header .card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 6px;
+            height: 4px;
             background: var(--gradient);
         }
         
-        .profile-img {
-            flex-shrink: 0;
-        }
-        
         .profile-img img {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--white);
-            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.25);
+            border: 4px solid var(--primary);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
         }
         
-        .header-text {
-            flex: 1;
-        }
-        
-        .header-text h1 {
-            font-size: 2.8rem;
+        h1 {
             font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--dark);
             letter-spacing: -0.02em;
+            color: #f8fafc;
         }
         
-        .header-text .title {
-            font-size: 1.15rem;
-            color: var(--gray);
-            margin-bottom: 24px;
+        .title {
+            color: #94a3b8;
             font-weight: 400;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
         }
         
         .nav a {
             text-decoration: none;
-            color: var(--dark-secondary);
+            color: #94a3b8;
             font-weight: 500;
-            font-size: 0.95rem;
-            padding: 10px 20px;
-            border-radius: 12px;
+            padding: 10px 18px;
+            border-radius: 10px;
             transition: all 0.25s ease;
-            background: var(--light);
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
         }
         
         .nav a:hover {
             background: var(--gradient);
-            color: var(--white);
+            color: #fff;
+            border-color: transparent;
             transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
         }
         
-        .section {
-            margin-bottom: 48px;
-        }
-        
-        .section h2 {
-            font-size: 1.75rem;
+        .section-title {
             font-weight: 600;
             margin-bottom: 24px;
-            color: var(--dark);
             padding-bottom: 12px;
-            border-bottom: 2px solid var(--gray-light);
-            letter-spacing: -0.01em;
+            border-bottom: 2px solid rgba(99, 102, 241, 0.3);
             display: flex;
             align-items: center;
             gap: 12px;
         }
         
-        .section h2::before {
+        .section-title::before {
             content: '';
             width: 8px;
             height: 8px;
@@ -147,243 +106,137 @@
             border-radius: 50%;
         }
         
-        .about-content p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            color: var(--dark-secondary);
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        
-        .project-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            border: 1px solid var(--gray-light);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow);
-            border-color: var(--primary-light);
-        }
-        
-        .project-img {
-            height: 160px;
+        .project-card .card-img-top {
             background: var(--gradient);
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: #fff;
             font-weight: 600;
-            font-size: 1.1rem;
-        }
-        
-        .project-content {
-            padding: 24px;
-        }
-        
-        .project-content h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-        
-        .project-content p {
-            margin-bottom: 16px;
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.25s ease;
-        }
-        
-        .project-link:hover {
-            color: var(--primary-dark);
-            gap: 10px;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 16px;
         }
         
         .skill-tag {
-            background: var(--white);
-            padding: 12px 24px;
+            background: rgba(99, 102, 241, 0.15);
+            padding: 10px 20px;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 500;
-            color: var(--dark-secondary);
-            border: 1px solid var(--gray-light);
+            color: #c4b5fd;
+            border: 1px solid rgba(99, 102, 241, 0.3);
             transition: all 0.25s ease;
         }
         
         .skill-tag:hover {
             background: var(--gradient);
-            color: var(--white);
+            color: #fff;
             border-color: transparent;
             transform: scale(1.05);
         }
         
-        .contact-info {
-            margin-top: 16px;
-            background: var(--white);
-            padding: 32px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-sm);
+        .contact-info .card {
+            border-left: 4px solid var(--primary);
         }
         
-        .contact-info p {
-            margin-bottom: 14px;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .contact-info p::before {
-            content: '↳';
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        .contact-info a {
-            color: var(--primary);
+        .project-link {
+            color: var(--primary-light);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.25s ease;
+            font-weight: 600;
+            transition: all 0.25s ease;
         }
         
-        .contact-info a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
+        .project-link:hover {
+            color: #fff;
+            gap: 10px;
         }
         
         footer {
-            text-align: center;
-            padding: 32px 0;
-            margin-top: 48px;
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 32px 24px;
-                gap: 24px;
-            }
-            
-            .profile-img img {
-                width: 140px;
-                height: 140px;
-            }
-            
-            .header-text h1 {
-                font-size: 2rem;
-            }
-            
-            .nav {
-                justify-content: center;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
+            color: #64748b;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="profile-img">
-                <img src="https://via.placeholder.com/200" alt="Profile Picture">
-            </div>
-            <div class="header-text">
-                <h1>Prianka Saha</h1>
-                <div class="title">Software Engineer | Full Stack Developer | Tech Enthusiast</div>
-                <div class="nav">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
+    <div class="container py-5">
+        <header class="card rounded-4 p-4 mb-5">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <img src="https://via.placeholder.com/200" alt="Profile Picture" class="img-fluid">
+                </div>
+                <div class="col">
+                    <h1 class="mb-2">Prianka Saha</h1>
+                    <p class="title mb-3">Software Engineer | Full Stack Developer | Tech Enthusiast</p>
+                    <div class="nav">
+                        <a href="#about" class="btn">About</a>
+                        <a href="#projects" class="btn">Projects</a>
+                        <a href="#skills" class="btn">Skills</a>
+                        <a href="#contact" class="btn">Contact</a>
+                    </div>
                 </div>
             </div>
         </header>
         
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>I'm a passionate software engineer with over 5 years of experience building scalable web applications and innovative software solutions. I specialize in full-stack development, with expertise in modern JavaScript frameworks, cloud technologies, and agile development methodologies.</p>
-                <p>My journey in software development began with a curiosity about how things work, which evolved into a career creating impactful digital experiences. I enjoy solving complex problems, optimizing performance, and crafting clean, maintainable code.</p>
+        <section id="about" class="mb-5">
+            <h2 class="section-title">About Me</h2>
+            <div class="card rounded-4 p-4">
+                <p class="mb-3">I'm a passionate software engineer with over 5 years of experience building scalable web applications and innovative software solutions. I specialize in full-stack development, with expertise in modern JavaScript frameworks, cloud technologies, and agile development methodologies.</p>
+                <p class="mb-3">My journey in software development began with a curiosity about how things work, which evolved into a career creating impactful digital experiences. I enjoy solving complex problems, optimizing performance, and crafting clean, maintainable code.</p>
                 <p>When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or sharing knowledge with the developer community.</p>
             </div>
         </section>
         
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">Project Image</div>
-                    <div class="project-content">
-                        <h3>Task Management Application</h3>
-                        <p>A full-stack task management application with real-time collaboration features, built with React and Node.js. Includes file sharing, notifications, and team management.</p>
-                        <a href="#" class="project-link">View Project</a>
+        <section id="projects" class="mb-5">
+            <h2 class="section-title">Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 rounded-4">
+                        <div class="card-img-top">Task Management App</div>
+                        <div class="card-body">
+                            <h3 class="h5 mb-2">Task Management Application</h3>
+                            <p class="text-secondary mb-3">A full-stack task management application with real-time collaboration features, built with React and Node.js. Includes file sharing, notifications, and team management.</p>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="project-card">
-                    <div class="project-img">Project Image</div>
-                    <div class="project-content">
-                        <h3>Data Visualization Dashboard</h3>
-                        <p>Interactive data visualization dashboard for business intelligence. Connects to multiple data sources and provides customizable charts and reports.</p>
-                        <a href="#" class="project-link">View Project</a>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 rounded-4">
+                        <div class="card-img-top">Data Dashboard</div>
+                        <div class="card-body">
+                            <h3 class="h5 mb-2">Data Visualization Dashboard</h3>
+                            <p class="text-secondary mb-3">Interactive data visualization dashboard for business intelligence. Connects to multiple data sources and provides customizable charts and reports.</p>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="project-card">
-                    <div class="project-img">Project Image</div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>Scalable online marketplace with payment integration, inventory management, and order tracking system.</p>
-                        <a href="#" class="project-link">View Project</a>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 rounded-4">
+                        <div class="card-img-top">E-Commerce</div>
+                        <div class="card-body">
+                            <h3 class="h5 mb-2">E-Commerce Platform</h3>
+                            <p class="text-secondary mb-3">Scalable online marketplace with payment integration, inventory management, and order tracking system.</p>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="project-card">
-                    <div class="project-img">Project Image</div>
-                    <div class="project-content">
-                        <h3>Chat Application</h3>
-                        <p>Real-time chat application with authentication, group chats, and multimedia sharing capabilities.</p>
-                        <a href="#" class="project-link">View Project</a>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 rounded-4">
+                        <div class="card-img-top">Chat App</div>
+                        <div class="card-body">
+                            <h3 class="h5 mb-2">Chat Application</h3>
+                            <p class="text-secondary mb-3">Real-time chat application with authentication, group chats, and multimedia sharing capabilities.</p>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <div class="skills">
+        <section id="skills" class="mb-5">
+            <h2 class="section-title">Skills</h2>
+            <div class="d-flex flex-wrap gap-2">
                 <span class="skill-tag">JavaScript</span>
                 <span class="skill-tag">React</span>
                 <span class="skill-tag">Node.js</span>
@@ -401,22 +254,22 @@
             </div>
         </section>
         
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p>Email: prianka.saha@example.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
-                <p>Location: San Francisco, CA</p>
+        <section id="contact" class="mb-5">
+            <h2 class="section-title">Contact</h2>
+            <div class="card rounded-4 p-4" style="max-width: 500px;">
+                <p class="mb-3">📧 Email: prianka.saha@example.com</p>
+                <p class="mb-3">📱 Phone: +1 (555) 123-4567</p>
+                <p class="mb-4">📍 Location: San Francisco, CA</p>
                 <p>
-                    <a href="#" target="_blank">GitHub</a> |
-                    <a href="#" target="_blank">LinkedIn</a> |
-                    <a href="#" target="_blank">Twitter</a>
+                    <a href="#" class="me-3">GitHub</a>
+                    <a href="#" class="me-3">LinkedIn</a>
+                    <a href="#">Twitter</a>
                 </p>
             </div>
         </section>
         
-        <footer>
-            <p>&copy; 2026 Prianka Saha. All rights reserved.</p>
+        <footer class="text-center py-4 mt-5">
+            <p class="mb-0">&copy; 2026 Prianka Saha. All rights reserved.</p>
         </footer>
     </div>
 </body>
