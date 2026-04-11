@@ -9,98 +9,89 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             color: #333;
+            background-color: #f9f9f9;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
+            padding: 20px;
         }
         
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            background: #ddd;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
         }
         
-        h1 {
-            font-size: 2.8rem;
+        .profile-img {
+            flex: 0 0 200px;
+            margin-right: 40px;
+        }
+        
+        .profile-img img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        
+        .header-text {
+            flex: 1;
+        }
+        
+        .header-text h1 {
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: #2c3e50;
         }
         
-        .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
+        .header-text .title {
+            font-size: 1.2rem;
+            color: #666;
             margin-bottom: 20px;
         }
         
-        .social-links {
+        .nav {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            gap: 30px;
             margin-top: 20px;
         }
         
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
+        .nav a {
             text-decoration: none;
-            transition: transform 0.3s;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
         }
         
-        .social-links a:hover {
-            transform: translateY(-3px);
+        .nav a:hover {
+            color: #2c3e50;
         }
         
-        main {
-            padding: 40px 30px;
-        }
-        
-        section {
+        .section {
             margin-bottom: 50px;
         }
         
-        h2 {
-            color: #2c3e50;
-            font-size: 2.2rem;
+        .section h2 {
+            font-size: 2rem;
             margin-bottom: 20px;
+            color: #2c3e50;
             padding-bottom: 10px;
-            border-bottom: 3px solid #f5f5f5;
+            border-bottom: 2px solid #eee;
         }
         
-        .profile-content {
+        .about-content p {
+            margin-bottom: 20px;
             font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            text-align: justify;
         }
         
         .projects-grid {
@@ -110,54 +101,47 @@
         }
         
         .project-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
-        .project-title {
-            color: #4a6491;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .project-img {
+            height: 200px;
+            background-color: #f0f0f0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            color: #999;
         }
         
-        .project-description {
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .project-content p {
+            margin-bottom: 15px;
             color: #666;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .tech-tag {
-            background: #667eea;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
         }
         
         .project-link {
-            color: #4a6491;
-            font-weight: 600;
-            text-decoration: none;
             display: inline-block;
-            margin-top: 5px;
+            color: #4a6491;
+            text-decoration: none;
+            font-weight: 600;
             transition: color 0.3s;
         }
         
@@ -166,31 +150,64 @@
             text-decoration: underline;
         }
         
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            color: #4a6491;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
         footer {
-            background: #f8f9fa;
-            padding: 30px;
             text-align: center;
-            color: #666;
+            padding: 30px 0;
+            margin-top: 50px;
             border-top: 1px solid #eee;
+            color: #666;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            .container {
-                border-radius: 10px;
-            }
-            
             header {
-                padding: 30px 20px;
+                flex-direction: column;
+                text-align: center;
             }
             
-            h1 {
-                font-size: 2.2rem;
+            .profile-img {
+                margin-bottom: 20px;
             }
             
-            .profile-pic {
-                width: 120px;
-                height: 120px;
-                font-size: 2.5rem;
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -198,84 +215,107 @@
 <body>
     <div class="container">
         <header>
-            <div class="profile-pic">JS</div>
-            <h1>Prianka Saha</h1>
-            <p class="subtitle">Software Engineer | Full Stack Developer | Tech Enthusiast</p>
-            <div class="social-links">
-                <a href="#" title="GitHub">GitHub</a>
-                <a href="#" title="LinkedIn">LinkedIn</a>
-                <a href="#" title="Twitter">Twitter</a>
-                <a href="#" title="Portfolio">Portfolio</a>
+            <div class="profile-img">
+                <img src="https://via.placeholder.com/200" alt="Profile Picture">
+            </div>
+            <div class="header-text">
+                <h1>Prianka Saha</h1>
+                <div class="title">Software Engineer | Full Stack Developer | Tech Enthusiast</div>
+                <div class="nav">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
             </div>
         </header>
         
-        <main>
-            <section class="profile">
-                <h2>About Me</h2>
-                <div class="profile-content">
-                    <p>I'm a passionate software engineer with over 5 years of experience building scalable web applications and innovative software solutions. I specialize in full-stack development, with expertise in modern JavaScript frameworks, cloud technologies, and agile development methodologies.</p>
-                    <p>My journey in software development began with a curiosity about how things work, which evolved into a career creating impactful digital experiences. I enjoy solving complex problems, optimizing performance, and crafting clean, maintainable code.</p>
-                    <p>When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or sharing knowledge with the developer community.</p>
-                </div>
-            </section>
-            
-            <section class="projects">
-                <h2>Software Showcase</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-title">
-                            <span>🚀</span> Project Alpha
-                        </div>
-                        <div class="project-description">
-                            A full-stack task management application with real-time collaboration features, built with React and Node.js. Includes file sharing, notifications, and team management.
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">WebSocket</span>
-                        </div>
-                        <a href="#" class="project-link">View Project</a>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-title">
-                            <span>📊</span> DataViz Dashboard
-                        </div>
-                        <div class="project-description">
-                            Interactive data visualization dashboard for business intelligence. Connects to multiple data sources and provides customizable charts and reports.
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <a href="#" class="project-link">View Project</a>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-title">
-                            <span>🛒</span> E-Commerce Platform
-                        </div>
-                        <div class="project-description">
-                            Scalable online marketplace with payment integration, inventory management, and order tracking system.
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Stripe API</span>
-                        </div>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm a passionate software engineer with over 5 years of experience building scalable web applications and innovative software solutions. I specialize in full-stack development, with expertise in modern JavaScript frameworks, cloud technologies, and agile development methodologies.</p>
+                <p>My journey in software development began with a curiosity about how things work, which evolved into a career creating impactful digital experiences. I enjoy solving complex problems, optimizing performance, and crafting clean, maintainable code.</p>
+                <p>When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+            </div>
+        </section>
+        
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">Project Image</div>
+                    <div class="project-content">
+                        <h3>Task Management Application</h3>
+                        <p>A full-stack task management application with real-time collaboration features, built with React and Node.js. Includes file sharing, notifications, and team management.</p>
                         <a href="#" class="project-link">View Project</a>
                     </div>
                 </div>
-            </section>
-        </main>
+                
+                <div class="project-card">
+                    <div class="project-img">Project Image</div>
+                    <div class="project-content">
+                        <h3>Data Visualization Dashboard</h3>
+                        <p>Interactive data visualization dashboard for business intelligence. Connects to multiple data sources and provides customizable charts and reports.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">Project Image</div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Scalable online marketplace with payment integration, inventory management, and order tracking system.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">Project Image</div>
+                    <div class="project-content">
+                        <h3>Chat Application</h3>
+                        <p>Real-time chat application with authentication, group chats, and multimedia sharing capabilities.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">REST API</span>
+                <span class="skill-tag">GraphQL</span>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Email: prianka.saha@example.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Location: San Francisco, CA</p>
+                <p>
+                    <a href="#" target="_blank">GitHub</a> |
+                    <a href="#" target="_blank">LinkedIn</a> |
+                    <a href="#" target="_blank">Twitter</a>
+                </p>
+            </div>
+        </section>
         
         <footer>
-            <p>Made with <span style="color: #e25555;">❤️</span> by John Smith | &copy; 2026</p>
-            <p style="margin-top: 10px; font-size: 0.9rem;">Based in San Francisco, CA</p>
+            <p>&copy; 2026 Prianka Saha. All rights reserved.</p>
         </footer>
     </div>
 </body>
